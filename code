@@ -1,0 +1,18 @@
+pip install pyautogui
+import pyautogui
+import tkinter as tk
+from tkinter.filedialog import *
+#importing required modules
+root = tk.Tk()
+canvas1 = tk.Canvas(root, width = 300, height = 300)
+canvas1.pack()
+#creating the tkinter window
+def takess():
+    myss = pyautogui.screenshot()
+    save_path = asksaveasfilename()
+    myss.save(save_path+"_screenshot.png")
+myButton = tk.Button(text ="take ss",command = takess,font = 10)
+canvas1.create_window(150,150,window= myButton)
+root.mainloop() 
+
+    
